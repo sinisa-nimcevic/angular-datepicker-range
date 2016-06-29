@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="doubleDatePicker">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+ 	<!-- bower:css -->
+ 	<link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/jquery-ui.min.css" />
+ 	<!-- endbower -->
+ 	<style>
+	 	@keyframes colorChange {
+		    from { background-color: #f6f6f6; color: #454545; }
+		    to { background-color: #888; color: white; }
+		}
+		.ui-datepicker td a {
+			color: #888;
+		}
+
+		.ui-datepicker td a.ui-state-active {
+		    background: #f6f6f6;
+		    border: 1px solid #c5c5c5;
+		    color: #454545;
+		}
+
+		.ui-datepicker td a.ui-state-highlight {
+		    background: #c2ff4a;
+		    border: 1px solid #c5c5c5;
+		    color: #454545;		
+		}
+
+ 		.ui-datepicker .ui-datepicker-week-end a {
+ 			background: #e8e8e8;
+ 			color: black;
+ 		}
+
+		.ui-datepicker .ui-datepicker-week-end.from-to-highlight a {
+			color: black;
+		}
+
+ 		.ui-datepicker td.from-to-highlight a{			
+ 			animation-name: colorChange;
+ 			animation-timing-function: ease-in;
+		    animation-duration: 0.3s;
+		    color: white;
+		    background: #888;	
+ 		}
+
+ 		.daterange-module {
+ 			position: relative;
+ 		}
+ 		.daterange-module .datepicker-hidden {
+ 			opacity: 0;
+ 			top: 0;
+ 			left: 0;
+ 			position: absolute;
+ 			z-index: -1;
+ 		}
+ 	</style> 
+</head>
+<body ng-controller="MainController as MCTRL">
+	
+	<strong>1:</strong> {{MCTRL.someDates[0]}} <span ng-model="MCTRL.date1"></span><br/>
+	<strong>2:</strong> {{MCTRL.someDates[1]}} <span ng-model="MCTRL.date2"></span><br/>
+	<span></span>
+	<br/>
+	<br/>
+	<strong>1:</strong> {{MCTRL.someOtherDates[0]}} <span ng-model="MCTRL.date1"></span><br/>
+	<strong>2:</strong> {{MCTRL.someOtherDates[1]}} <span ng-model="MCTRL.date2"></span><br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/> 	
+
+	<date-range-picker dates="MCTRL.someDates"></date-range-picker>
+
+	<br/>
+	<br/>
+
+	<date-range-picker dates="MCTRL.someOtherDates"></date-range-picker>
+
+
+
+	<!-- bower:js -->
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+	<!-- endbower -->
+	<script src="app.js"></script>
+	<script src="dateRangePicker.directive.js"></script>
+</body>
+</html>

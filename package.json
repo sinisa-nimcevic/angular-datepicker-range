@@ -1,0 +1,17 @@
+{
+  "name": "doubledatepicker",
+  "version": "1.0.0",
+  "description": "A from - to datepicker module",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "s.n.",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-wiredep": "^3.0.1"
+  }
+}

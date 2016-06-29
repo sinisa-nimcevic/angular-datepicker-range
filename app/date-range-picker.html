@@ -1,0 +1,6 @@
+<div class="daterange-module daterange-module--{{::$id}}">
+	From :	<input type="text" ng-model="dates[0]" ng-click="showDatePicker($event, 'from')" />
+	To : 	<input type="text" ng-model="dates[1]" ng-click="showDatePicker($event, 'to')" />
+	<span ng-if="days > 0">{{days}} days</span>
+	<input type="text" class="datepicker-hidden datepicker-hidden--{{::$id}}" />
+</div>

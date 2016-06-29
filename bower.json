@@ -1,0 +1,30 @@
+{
+  "name": "doubledatepicker",
+  "description": "A from - to datepicker module",
+  "main": "index.html",
+  "authors": [
+    "s.n."
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "jquery": "^3.0.0",
+    "jquery-ui": "^1.11.4"
+  },
+  "overrides": {
+    "jquery-ui": {
+      "main": [
+        "jquery-ui.js",
+        "themes/base/jquery-ui.min.css"
+      ]
+    }
+  }
+}
