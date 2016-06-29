@@ -59,24 +59,22 @@
 </head>
 <body ng-controller="MainController as MCTRL">
 	
-	<strong>1:</strong> {{MCTRL.someDates[0]}} <span ng-model="MCTRL.date1"></span><br/>
-	<strong>2:</strong> {{MCTRL.someDates[1]}} <span ng-model="MCTRL.date2"></span><br/>
+	<strong>1:</strong> {{MCTRL.dateFrom}}<br/>
+	<strong>2:</strong> {{MCTRL.dateTo}}<br/>
 	<span></span>
 	<br/>
 	<br/>
-	<strong>1:</strong> {{MCTRL.someOtherDates[0]}} <span ng-model="MCTRL.date1"></span><br/>
-	<strong>2:</strong> {{MCTRL.someOtherDates[1]}} <span ng-model="MCTRL.date2"></span><br/>
-	<br/>
-	<br/>
+	<strong>1:</strong> {{MCTRL.dateFromX}}<br/>
+	<strong>2:</strong> {{MCTRL.dateToX}}<br/>
 	<br/>
 	<br/> 	
 
-	<date-range-picker dates="MCTRL.someDates"></date-range-picker>
+	<date-range-picker date-from="MCTRL.dateFrom" date-to="MCTRL.dateTo"></date-range-picker>
 
 	<br/>
 	<br/>
 
-	<date-range-picker dates="MCTRL.someOtherDates"></date-range-picker>
+	<date-range-picker date-from="MCTRL.dateFromX" date-to="MCTRL.dateToX"></date-range-picker>
 
 
 
