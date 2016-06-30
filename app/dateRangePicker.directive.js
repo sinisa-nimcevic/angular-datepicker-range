@@ -26,13 +26,14 @@
 	    			vm.days = 0;
 
 					vm.setDateModel = function(i, date) {
-						i == 0 ? vm.dateFrom = date : vm.dateTo = date;				
-						if (vm.dateFrom.length > 0 && vm.dateTo > 0) {
+						i == 0 ? vm.dateFrom = date : vm.dateTo = date;			
+						if (vm.dateFrom.length > 0 && vm.dateTo.length > 0) {
 							var a = new Date(vm.dateFrom);
 							var b = new Date(vm.dateTo);
-							vm.days = Math.round(Math.abs((a.getTime() - b.getTime())/(24*60*60*1000)));
+
+							vm.days = Math.round(Math.abs((a.getTime() - b.getTime())/(24*60*60*1000)));	
 						} else {
-							vm.days = 0;
+							vm.days = 0;	
 						}
 						$scope.$apply();			
 					}
@@ -53,9 +54,7 @@
 								var origin = vm.origin || 'from';
 
 								// check if it's a click on an existing date (reset a value and end the loop)
-
 								if (vm.dateFrom.length > 0) {
-									console.log('here');
 									var compare = new Date(vm.dateFrom);
 									if (clickedDate.getTime() == compare.getTime()) {															
 										vm.setDateModel(0, '');
@@ -72,7 +71,7 @@
 								}
 
 
-								// add new value, selected date isn't an existing one
+								// add new value because selected date isn't an existing one
 								if (!reset) {
 									// if no "from" value is set, and you navigated from a "from" field
 									if (vm.dateFrom.length == 0 && origin == 'from') {	
@@ -94,7 +93,7 @@
 									}
 									//if both a "from" and a "to" value are set
 									else {
-										// assume the user is trying to extend the "to" date		
+										// assume the user is trying to modify the "to" date		
 										if (clickedDate > fromDate) {
 											vm.setDateModel(1, selectedDate);
 										}
@@ -110,11 +109,11 @@
 										}
 									}		
 								}
-								// leave the datepicker initialized after click
+								// code to leave the datepicker initialized after click
 								$(this).data('datepicker').inline = true;
 							},
 							onClose: function () {
-								// leave the datepicker initialized after click
+								// code to leave the datepicker initialized after click
 								$(this).data('datepicker').inline = false;
 							}, 
 							beforeShowDay: vm.highlightDays
