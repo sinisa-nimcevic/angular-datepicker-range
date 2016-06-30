@@ -15,7 +15,9 @@
     		templateUrl : 'date-range-picker.html',
     		scope : {
     			dateFrom: '=dateFrom',
-    			dateTo: '=dateTo'
+    			dateTo: '=dateTo',
+    			fromText: '@fromText',
+    			toText: '@toText'
     		},
     		link : function (scope, element, attrs) {
     			// link function
@@ -23,7 +25,12 @@
     		controller: function($scope, $timeout) {
     			$timeout(function(){ //do controller inside $timeout to work with jquery ui after dom changes
 	    			var vm = $scope;
+
+	    			vm.dateFrom = vm.dateFrom || "";
+	    			vm.dateTo = vm.dateTo || "";
 	    			vm.days = 0;
+	    			vm.fromText = vm.fromText || "From : ";
+	    			vm.toText = vm.toText || "To : ";
 
 					vm.setDateModel = function(i, date) {
 						i == 0 ? vm.dateFrom = date : vm.dateTo = date;			
